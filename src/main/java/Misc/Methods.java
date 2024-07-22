@@ -5,15 +5,12 @@ import com.microsoft.playwright.Page;
 
 import com.microsoft.playwright.options.SelectOption;
 import org.testng.Assert;
+import pages.HomePage;
 import utils.PlaywrightDriver;
 
-public class Methods {
+public class Methods extends HomePage {
 
-	public Page page;
 
-	public Methods(Page page) {
-		this.page = page;
-	}
 
 	public String getPageTitle() {
 		return page.title();
@@ -29,6 +26,13 @@ public class Methods {
 	public void click(String locator) {
 		try {
 			page.locator(locator).click();
+		} catch (Throwable t) {
+			Assert.fail(t.getMessage());
+		}
+	}
+	public void pressKey(String key) {
+		try {
+			page.keyboard().press(key);
 		} catch (Throwable t) {
 			Assert.fail(t.getMessage());
 		}

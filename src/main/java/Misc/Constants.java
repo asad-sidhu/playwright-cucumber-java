@@ -11,6 +11,6 @@ public class Constants {
     public static final String USERNAME = "testuser";
     public static final String PASSWORD = "password123";
 
-    // Timeouts
+    // RestaurantSearchPageouts
     public static final int IMPLICIT_WAIT = 10; // in seconds
 }

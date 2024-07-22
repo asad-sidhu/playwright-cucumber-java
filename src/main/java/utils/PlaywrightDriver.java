@@ -75,12 +75,12 @@ public class PlaywrightDriver {
     }
 
     public static void fullScreen() {
-//        getPage().setViewportSize(1920, 1080);
+        getPage().setViewportSize(1920, 1080);
     }
 
 
     public static void openPage(String url) {
-        getPage().navigate(url);
+        getPage().navigate(url,new Page.NavigateOptions().setTimeout(60000));
     }
 
     public static void closeBrowser() {
