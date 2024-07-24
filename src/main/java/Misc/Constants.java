@@ -6,6 +6,9 @@ public class Constants {
     // URLs
     public static final String BASE_URL = PlaywrightDriver.config.getProperty("url");
     public static final String HOME_URL = PlaywrightDriver.config.getProperty("url")+"/";
+    public static final String LOGIN_URL = PlaywrightDriver.config.getProperty("url")+"/account/login";
+    public static final String SIGNUP_URL = PlaywrightDriver.config.getProperty("url")+"/account/register";
+    public static final String CART_URL = PlaywrightDriver.config.getProperty("url")+"/cart";
 
     // Credentials
     public static final String USERNAME = "testuser";

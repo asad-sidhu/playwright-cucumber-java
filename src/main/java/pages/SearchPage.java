@@ -25,6 +25,7 @@ public class SearchPage extends BasePage {
     private String productTitle = "h1[class*='product-title']";
     private String trendingNowItems = "div[class=thb-predictive-search--promotion] a[class=product-card-title]";
     private String firstSearchResult = "ul#product-grid li:nth-child(1) a.product-card-title";
+    private String firstSearchResultImage = "ul#product-grid li:nth-child(1) img";
     private String noResultsMessage = "text='No results found'";
     private String homepageIndicator = "text='Featured Products'";
 
@@ -75,6 +76,12 @@ public class SearchPage extends BasePage {
 
     public void clickPopularSearchOption() {
         page.locator(popularSearchItems).first().click();
+    }
+
+    public String selectFirstProduct() {
+        String product = page.locator(firstSearchResultImage).getAttribute("src");
+        page.locator(firstSearchResult).click();
+        return product;
     }
 
     public void clickTrendingNowOption() {

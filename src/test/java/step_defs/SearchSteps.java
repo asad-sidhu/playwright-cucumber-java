@@ -4,18 +4,14 @@ import Misc.Constants;
 import Misc.Methods;
 import com.microsoft.playwright.Page;
 import io.cucumber.java.en.*;
-import io.qameta.allure.Allure;
 import org.testng.Assert;
 import pages.SearchPage;
 import utils.PlaywrightDriver;
-
-import java.io.ByteArrayInputStream;
 
 public class SearchSteps {
 
     private final Page page = PlaywrightDriver.getPage();
     private final SearchPage searchPage = new SearchPage();
-    private final SearchPage restaurantSearchPage = new SearchPage();
     public static Methods methods = new Methods();
 
 
@@ -23,7 +19,7 @@ public class SearchSteps {
     @Given("I am on the Edenrobe homepage")
     public void i_am_on_the_edenrobe_homepage() {
         try {
-            PlaywrightDriver.openPage(Constants.HOME_URL);
+            searchPage.navigateToHomePage();
         } catch (Exception e) {
             e.printStackTrace();
             methods.attachScreenshot("");

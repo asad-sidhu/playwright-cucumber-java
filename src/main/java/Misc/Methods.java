@@ -1,17 +1,17 @@
 package Misc;
 
+import base.BasePage;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
 import com.microsoft.playwright.options.SelectOption;
 import io.qameta.allure.Allure;
 import org.testng.Assert;
-import pages.HomePage;
 import utils.PlaywrightDriver;
 
 import java.io.ByteArrayInputStream;
 
-public class Methods extends HomePage {
+public class Methods extends BasePage {
 
 
 
