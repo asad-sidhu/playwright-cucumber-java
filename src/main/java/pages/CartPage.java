@@ -13,6 +13,7 @@ public class CartPage extends BasePage {
     // Locators
     private String deleteProductButton = "a.remove.cart-remove-desktop";
     private String emptyCartMessage = "//h1[text() = 'Your cart is empty']";
+    private String cartItems = "//tr[contains(@id,'CartItem')]";
     private String quantityInput = "td.product-quantity input.qty";
     private String checkOutButton = "button.checkout-button.button.full";
     private String productPrice = ".product-subtotal span.price";
@@ -28,6 +29,13 @@ public class CartPage extends BasePage {
         }
         System.out.println(productName);
         return page.locator("//td[@class='product-name']//img[@src = '"+productName+"']").isVisible();
+    }
+
+    public int verifyMultipleProducts() {
+        if (!page.title().equalsIgnoreCase(Constants.CART_URL)) {
+            navigateToCartPage();
+        }
+        return page.locator(cartItems).count();
     }
 
     public void navigateToCartPage() {

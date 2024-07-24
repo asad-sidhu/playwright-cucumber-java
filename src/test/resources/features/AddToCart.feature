@@ -18,7 +18,12 @@ Feature: Add to Cart
     Then I should see the quantity updated in the cart to 2
     And I should see the total price updated to * 2
 
-  Scenario: View the cart
+  Scenario: Add multiple products to the cart
     Given I have a product in my cart
-    When I view the cart
-    Then I should see the product details in the cart
+    And I am on the Edenrobe homepage
+    And I search for "pants"
+    And I select a product from the search results
+    And I add the product to the cart
+    Then I should see 2 products in the cart
+
+

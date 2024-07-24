@@ -66,6 +66,22 @@ public class AddToCartSteps {
         }
     }
 
+    @Then("I should see {int} products in the cart")
+    public void i_should_see_multiple_products_in_the_cart(int numOfProducts) {
+        try {
+            int productInCart = cartPage.verifyMultipleProducts();
+            Assert.assertEquals(productInCart,2, "Both added Products should be in the cart");
+        } catch (AssertionError e) {
+            e.printStackTrace();
+            methods.attachScreenshot("");
+            throw e;
+        } catch (Exception e) {
+            e.printStackTrace();
+            methods.attachScreenshot("");
+            throw e;
+        }
+    }
+
     @Given("I have a product in my cart")
     public void i_have_a_product_in_my_cart() throws InterruptedException {
         cartPage.navigateToCartPage();
