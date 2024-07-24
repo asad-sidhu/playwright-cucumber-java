@@ -13,6 +13,10 @@ target/
 *.ipr
 *.json
 *.jar
+*.js
+*.css
+*.svg
+*.yml
 
 ### Eclipse ###
 .apt_generated
