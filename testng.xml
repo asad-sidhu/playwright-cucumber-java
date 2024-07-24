@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Playwright-Cucumber Suite" parallel="tests" thread-count="2">
+
+    <!-- Define a test group -->
+    <test name="Cucumber Tests">
+        <classes>
+            <!-- Add your test runner class here -->
+            <class name="runner.Runner"/>
+        </classes>
+    </test>
+
+</suite>

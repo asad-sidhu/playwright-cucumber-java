@@ -8,12 +8,12 @@ Feature: Search functionality on Edenrobe.com
   Scenario: Search for an invalid product
     Given I am on the Edenrobe homepage
     When I search for "nonexistentproduct"
-    Then I should see a "no results found " message
+    Then I should see a "No results found " message
 
   Scenario: Search with special characters
     Given I am on the Edenrobe homepage
     When I search for "@#$%^43432"
-    Then I should see a "no results found" message
+    Then I should see a "No results found" message
 
   Scenario: Search with a single character
     Given I am on the Edenrobe homepage
@@ -23,7 +23,7 @@ Feature: Search functionality on Edenrobe.com
   Scenario: Search with numeric values
     Given I am on the Edenrobe homepage
     When I search for "12345"
-    Then I should see a "no results found" message
+    Then I should see a "No results found" message
 
   Scenario: Search with a product category
     Given I am on the Edenrobe homepage
