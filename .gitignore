@@ -17,6 +17,7 @@ target/
 *.css
 *.svg
 *.yml
+*.allure
 
 ### Eclipse ###
 .apt_generated
